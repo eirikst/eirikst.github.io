@@ -1,25 +1,26 @@
 var Match = class Match {
 
-	constructor(homeTeam, awayTeam, homeScore, awayScore, date) {
-		this.homeTeam = homeTeam;
-		this.awayTeam = awayTeam;
+	constructor(homeTeamStr, awayTeamStr, homeScore, awayScore, date) {
+		this.homeTeamStr = homeTeamStr;
+		this.awayTeamStr = awayTeamStr;
 		this.homeScore = homeScore;
 		this.awayScore = awayScore;
 		this.date = date;
 	}
 
+	//TODO: Her returnerer jeg navn som brukes til videre sammenligning. Kan by på problemer ved like navn...
 	winner() {
 		if(this.homeScore > this.awayScore) {
-			return this.homeTeam;
+			return this.homeTeamStr;
 		}
 		if(this.awayScore > this.homeScore) {
-			return this.awayTeam;
+			return this.awayTeamStr;
 		}
 		return "draw";
 	}
 
 	printable() {
-		return this.homeTeam.nameStr + ' - ' + this.awayTeam.nameStr + ' ' +
+		return this.homeTeamStr.nameStr + ' - ' + this.awayTeamStr.nameStr + ' ' +
 		this.homeScore + ' - ' + this.awayScore;
 	}
 }

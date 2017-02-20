@@ -1,6 +1,6 @@
 var app = angular.module("oddsgeir");
 
-app.service("sorting", function() {
+app.service("sortingService", function() {
 
   //Takes a team and sorts the matches with the most recent first
   this.sortMatchesForTeamRecentFirst = function(team) {

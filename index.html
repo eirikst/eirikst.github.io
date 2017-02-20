@@ -6,9 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <link rel="stylesheet" href='css/custom.css'>
 
@@ -32,7 +30,7 @@
 
     <!-- filter panel -->
     <div class="panel panel-default">
-      <div class="panel-heading">Filter</div>
+      <div class="panel-heading"><h4>Filter</h4></div>
       <div class="panel-body">
 
         <!-- minimum number of games in run -->
@@ -51,19 +49,19 @@
         </div>
 
         <!-- Next game at home or away -->
-        <div class="broken-filter-div" hidden>
-          <div class="broken-filter-div">
+          <div class="broken-filter-div" hidden>
             <label class="radio-inline"><input type="radio" name="wherenextradio">Next at home</label>
             <label class="radio-inline"><input type="radio" name="wherenextradio">Next away</label>
             <label class="radio-inline"><input type="radio" name="wherenextradio" checked>All</label>
           </div>
 
-        </div>
       </div>
     </div>
     <!-- end filter panel -->
 
-
+    <div class="broken-filter-div" style="text-align: right">
+        <i>Click to refresh data</i>&nbsp;&nbsp;<button><img ng-click="refreshData()" src="res/icons/ic_update_black_48dp_2x.png" alt="Mountain View" style="width:30px;height:30px;"></button>
+    </div>
 
 
 
@@ -73,7 +71,7 @@
     <!-- liste av brokens -->
     <div>
 
-      <p>Brokens som tilfredsstiller filter:</p>
+      <h4>Brokens som tilfredsstiller filter</h4>
 
       <div>
 
@@ -93,10 +91,10 @@
                         {{ match.date | date:'dd.MM.yyyy'}}
                       </td>
                       <td>
-                        {{match.homeTeam.nameStr}}
+                        {{match.homeTeamStr}}
                       </td>
                       <td>
-                        {{match.awayTeam.nameStr}}
+                        {{match.awayTeamStr}}
                       </td>
                       <td>
                         {{match.homeScore}} - {{match.awayScore}}
@@ -118,28 +116,21 @@
       <!-- end liste av brokens -->
 
 
-
-      <!-- TODO:REMOVE BUTTON-->
-      <button hidden ng-click="test()">Hei</button>
     </div>
     <!-- end controller -->
 
-
-    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
     <script src="js/angular/angular.min.js"></script>
     <script src="js/oddsgeir.js"></script>
-    <script src="js/services/testdata.js"></script>
-    <script src="js/services/sorting.js"></script>
-    <script src="js/services/broken-run-service.js"></script>
-    <script src="js/controllers/testcontroller.js"></script>
-    <script src="js/controllers/controller.js"></script>
-    <script src="js/filters/broken-filter.js"></script>
+    <script src="js/services/testDataService.js"></script>
+    <script src="js/services/sortingService.js"></script>
+    <script src="js/services/localStorageService.js"></script>
+    <script src="js/controllers/brokenCtrl.js"></script>
+    <script src="js/filters/brokenFilter.js"></script>
     <script src="js/model/league.js"></script>
     <script src="js/model/team.js"></script>
     <script src="js/model/match.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   </body>
 
   </html>
