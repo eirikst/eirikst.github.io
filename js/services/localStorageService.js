@@ -19,7 +19,13 @@ app.service("localStorageService", ['$window', function($window) {
 
   this.getObject = function(key) {
     if($window.localStorage[key] != undefined) {
-      return JSON.parse( $window.localStorage[key] || false );
+      try {
+        return JSON.parse( $window.localStorage[key] || false );
+      }
+      catch(e) {
+        console.log("Local storage: " + e);
+        return undefined;
+      }
     }
   }
 

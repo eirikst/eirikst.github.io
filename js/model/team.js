@@ -1,8 +1,8 @@
 var Team = class Team {
 
-	constructor(nameStr, nationStr) {
+	constructor(nameStr, league) {
 		this.nameStr = nameStr;
-		this.nationStr = nationStr;
+		this.league = league;
 		this.matches = [];
 	}
 

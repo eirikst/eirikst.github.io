@@ -1,8 +1,11 @@
 var app = angular.module('oddsgeir');
 
 app.filter('brokenFilter', function() {
-  return function(input, nrOfMatches, isWinning, isLosing) {
+  return function(input, applyFilter, nrOfMatches, isWinning, isLosing) {
 
+    if(!applyFilter) {
+      return input;
+    }
     //console.log(nrOfMatches + ' ' + isWinning + ' ' + isLosing);//TODO: REMOVE log
 
     //Assumes a team with a sorted list of matches with the most recent ones first

@@ -1,18 +1,12 @@
 var League = class League {
-	
-	constructor(nameStr, nationStr) {
+
+	constructor(nameStr, nationStr, url) {
 		this.nameStr = nameStr;
 		this.nationStr = nationStr;
-		this.teams = [];
+		this.url = url;
 	}
-	
-	addTeam(team) {
-		this.teams.push(team);
-	}
-	
-	addTeams(teams) {
-		for(var i = 0; i < teams.length; i++) {
-			this.teams.push(teams[i]);
-		}
+
+	toString() {
+		return this.nationStr + " " + this.nameStr;
 	}
 }
