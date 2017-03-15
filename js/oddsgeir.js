@@ -1,1 +1,1 @@
-angular.module('oddsgeir', []);
+angular.module('oddsgeir', ['angularSpinner']);

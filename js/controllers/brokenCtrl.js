@@ -19,6 +19,7 @@ app.controller('brokenCtrl', ['$scope', 'testDataService', 'sortingService',
   this.callback = function(teams) {
     $scope.$apply(function(){
       $scope.teams = teams;
+      $scope.showSpinner = false;
       sortingService.sortMatchesForTeams($scope.teams);//TODO: burde dette ligge her?
       localStorageService.storeTeams($scope.teams);
     });
@@ -26,6 +27,8 @@ app.controller('brokenCtrl', ['$scope', 'testDataService', 'sortingService',
 
   //update betex data
   function refreshData() {
+    $scope.teams = [];
+    $scope.showSpinner = true;
     var promise = betexScraper.scrape(thiss);
   }
 

@@ -10,7 +10,7 @@ app.service("betexScraper", ['leagueService', function(leagueService) {
   this.scrape = function(ctrl) {
     thiss.ctrl = ctrl;
 
-    thiss.allLeagues = leagueService.allLeagues();
+    thiss.allLeagues = leagueService.testData();
 
     var matchesUrlPromise = thiss.findMatches(thiss.allLeagues);
 
