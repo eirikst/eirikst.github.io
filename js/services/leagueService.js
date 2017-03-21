@@ -305,7 +305,7 @@ app.service("leagueService", function() {
     urls.push(new League("Premier League", "Wales", "http://www.betexplorer.com/soccer/wales/premier-league/results"));
 
 
-    //ca 166 ligaer
+    //145 ligaer
 
     return urls;
   }

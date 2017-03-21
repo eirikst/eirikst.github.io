@@ -27,7 +27,7 @@ app.controller('brokenCtrl', ['$scope', 'testDataService', 'sortingService',
 
   //update betex data
   function refreshData() {
-    $scope.teams = [];
+    $scope.teams.length = 0;
     $scope.showSpinner = true;
     var promise = betexScraper.scrape(thiss);
   }
