@@ -9,4 +9,8 @@ var League = class League {
 	toString() {
 		return this.nationStr + " " + this.nameStr;
 	}
+
+	fixturesUrl() {
+		return this.url.replace("results", "fixtures");
+	}
 }

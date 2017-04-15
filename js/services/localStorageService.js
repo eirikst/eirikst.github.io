@@ -20,7 +20,9 @@ app.service("localStorageService", ['$window', function($window) {
   this.getObject = function(key) {
     if($window.localStorage[key] != undefined) {
       try {
-        return JSON.parse( $window.localStorage[key] || false );
+        var json = JSON.parse( $window.localStorage[key] || false );
+        console.log(json);
+        return json
       }
       catch(e) {
         console.log("Local storage: " + e);
@@ -48,6 +50,7 @@ app.service("localStorageService", ['$window', function($window) {
   this.fromObjectToTeam = function(object) {
     var team = new Team(object.nameStr, object.nationStr);
     team.matches = this.fromObjectsToMatches(object.matches);
+    team.league = this.fromObjectToLeague(object.league);
     return team;
   }
 
@@ -63,5 +66,9 @@ app.service("localStorageService", ['$window', function($window) {
   this.fromObjectToMatch = function(object) {
     return new Match(object.homeTeamStr, object.awayTeamStr,
       object.homeScore, object.awayScore, object.date);
+  }
+
+  this.fromObjectToLeague = function(object) {
+    return new League(object.nameStr, object.nationStr, object.url);
   }
 }]);

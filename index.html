@@ -88,7 +88,7 @@
           <tbody>
             <tr data-ng-repeat="team in teams|brokenFilter:applyFilter:chosenNrOfMatches:typeofrun=='win'||typeofrun=='both':typeofrun=='los'||typeofrun=='both'" ng-init="team.hide=true">
               <td>
-                <div ng-click='team.hide=!team.hide'>{{team.nameStr}} ({{team.league.toString()}})</div><!--team name header-->
+                <div><span ng-click='team.hide=!team.hide'>{{team.nameStr}} ({{team.league.toString()}})</span> <a target="_blank" ng-href="{{redirectFixtures(team.league)}}">Upcoming</a></div><!--team name header-->
 
                 <!-- inner match table -->
                 <table class="table broken-match-table" ng-show='!team.hide'>

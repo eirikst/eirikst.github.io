@@ -24,9 +24,9 @@ app.service("betexScraper", ['leagueService', function(leagueService) {
   this.findMatches = function(leagues) {
     var promises = [];
     for(var i = 0; i < leagues.length; i++) {
-      var heidu = leagues[i];
 
-      var request = jQuery.get(leagues[i].url, function(data, response) {
+      var thisUrl = leagues[i].url;
+      var thisCallback = function(data, response, tt) {
         var matchesFromLeague = [];
         var teams = [];
         try {
@@ -44,14 +44,18 @@ app.service("betexScraper", ['leagueService', function(leagueService) {
             }
           }
           thiss.matches.push.apply(thiss.matches, matchesFromLeague);
-          createTeams(matchesFromLeague, heidu.nationStr + " " +
-          heidu.nameStr);
+          createTeams(matchesFromLeague, leagueService.getLeagueFromUrl(this.url));
         }
         catch(e) {
           console.log("Failed getting league's matches: " + e);
           console.log(data);
         }
 
+      };
+
+      request = jQuery.ajax({
+          url: thisUrl,
+          success: thisCallback
       });
 
       promises.push(request);
@@ -138,76 +142,5 @@ app.service("betexScraper", ['leagueService', function(leagueService) {
 
 
 
-
-
-
-
-//DEPRECATED::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    var baseUrl = "http://www.betexplorer.com";
-
-
-    //Henter ut land fra betex/soccer - countries-liste til høyre, med struktur ul/li/div/a
-    this.findCountries = function() {
-    	return jQuery.get('http://www.betexplorer.com/soccer/', function(data, response) {
-    		var ul = $(data).find("#countries-select");
-        var a = ul.find("a");
-
-        for(var i = 0; i < a.length; i++) {
-          thiss.countryUrls.push(baseUrl + $(a[i]).attr('href'));
-        }
-      });
-    }
-
-
-    //Henter ut ligaer fra en liste av urler til countries
-    this.findLeagues = function(countryUrls) {
-      var urls = [];
-      var promises = [];
-
-      for(var i = 0; i < countryUrls.length; i++) {
-
-        promises.push(jQuery.get(countryUrls[i], function(data, response) {
-          try {
-          //find table.table-main betyr finn table-elementer av klassen table-main
-          var table = $(data).find("table.table-main");
-          var tbody = table.find("tbody");
-          var relevantTbodies = [];
-
-          //struktur tbody/tr/th for navn på liga
-          //struktur tbody/tr/td/a for lenker
-          for(var i = 0; i < tbody.length; i++) {
-            //navn på liga er gjemt i en tr->th
-            var th = $(tbody[i]).find("th");
-            var nameOfLeague = th.text();
-            if(nameOfLeague.indexOf("2017") !== -1 && nameOfLeague.indexOf("Friendly") == -1) {
-              //lenkene finnes i en tr->td->a
-              var a = $(tbody[i]).find("a");
-              for(var j = 0; j < a.length; j++) {
-                thiss.allLeagues.push(baseUrl + $(a[j]).attr('href') + "results");
-              }
-            }
-          }
-        }
-        catch(e) {
-          console.log("Failed getting country's leagues: " + e);
-          console.log(data);
-        }
-      }));
-
-    }
-
-    return Q.allSettled(promises)
-    .then(function (results) {
-      results.forEach(function (result) {
-        if (result.state === "fulfilled") {
-            thiss.allLeagues.push(result.value);
-            console.log("qok findLeagues");
-        } else {
-            var reason = result.reason;
-            console.log("Q get error findLeagues: " + reason);
-          }
-        });
-      });
-    }
 
 }]);

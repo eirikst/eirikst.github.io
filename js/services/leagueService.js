@@ -1,32 +1,33 @@
 var app = angular.module("oddsgeir");
 
 app.service("leagueService", function() {
+  var urls = [];
+  init();
+  //initTest();
 
 
-
-  //Returnerer urlene til noen testligaer
-  this.testData = function() {
-    var urls = [];
-
-    //England
-    urls.push(new League("Premier League", "England", "http://www.betexplorer.com/soccer/england/premier-league/results"));
-    urls.push(new League("Championship", "England", "http://www.betexplorer.com/soccer/england/championship/results"));
-    /*urls.push(new League("League One", "England", "http://www.betexplorer.com/soccer/england/league-one/results"));
-    urls.push(new League("League Two", "England", "http://www.betexplorer.com/soccer/england/league-two/results"));
-    urls.push(new League("Vanarama National League", "England", "http://www.betexplorer.com/soccer/england/vanarama-national-league/results"));
-    urls.push(new League("Vanarama National League North", "England", "http://www.betexplorer.com/soccer/england/vanarama-national-league-north/results"));
-    urls.push(new League("Vanarama National League South", "England", "http://www.betexplorer.com/soccer/england/vanarama-national-league-south/results"));
-    urls.push(new League("Southern Premier League", "England", "http://www.betexplorer.com/soccer/england/southern-premier-league/results"));
-    urls.push(new League("Northern Premier League", "England", "http://www.betexplorer.com/soccer/england/northern-premier-league/results"));
-    urls.push(new League("Ryman League", "England", "http://www.betexplorer.com/soccer/england/ryman-league/results"));
-*/
+  //Returnerer urlene til alle ligaer som ønskes
+  this.allLeagues = function() {
+    console.log("HEI");
+    console.log(urls);
 
     return urls;
   }
 
-  //Returnerer urlene til alle ligaer som ønskes
-  this.allLeagues = function() {
-    var urls = [];
+  this.getLeagueFromUrl = function(url) {
+    for(var i = 0; i < urls.length; i++) {
+      if(urls[i].url == url) {
+        return urls[i];
+      }
+    }
+  }
+
+  function initTest() {
+    urls.push(new League("Premier League", "England", "http://www.betexplorer.com/soccer/england/premier-league/results"));
+    urls.push(new League("Championship", "England", "http://www.betexplorer.com/soccer/england/championship/results"));
+  }
+
+  function init() {
 
     //Albania
     urls.push(new League("Super League", "Albania", "http://www.betexplorer.com/soccer/albania/super-league/results"));
