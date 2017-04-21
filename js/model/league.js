@@ -10,7 +10,11 @@ var League = class League {
 		return this.nationStr + " " + this.nameStr;
 	}
 
-	fixturesUrl() {
-		return this.url.replace("results", "fixtures");
-	}
+		fixturesUrl() {
+			return this.url.replace("results", "fixtures");
+		}
+
+		summaryUrl() {
+			return this.url.replace("results", "");
+		}
 }

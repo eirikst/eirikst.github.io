@@ -8,9 +8,6 @@ app.service("leagueService", function() {
 
   //Returnerer urlene til alle ligaer som ønskes
   this.allLeagues = function() {
-    console.log("HEI");
-    console.log(urls);
-
     return urls;
   }
 

@@ -39,4 +39,8 @@ app.controller('brokenCtrl', ['$scope', 'testDataService', 'sortingService',
   $scope.redirectFixtures = function(league) {
     return league.fixturesUrl();
   }
+
+  $scope.redirectSummary = function(league) {
+    return league.summaryUrl();
+  }
 }]);
