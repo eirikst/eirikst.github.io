@@ -31,7 +31,7 @@ app.service("leagueService", function() {
 
     //Argentina
     urls.push(new League("Primera Division", "Argentina", "http://www.betexplorer.com/soccer/argentina/primera-division/results"));
-    urls.push(new League("Primera B Nacional", "Argentina", "http://www.betexplorer.com/soccer/argentina/primera-b-nacional//results"));
+    urls.push(new League("Primera B Nacional", "Argentina", "http://www.betexplorer.com/soccer/argentina/primera-b-nacional/results"));
     urls.push(new League("Primera B Metropolitana", "Argentina", "http://www.betexplorer.com/soccer/argentina/primera-b-metropolitana/results"));
     urls.push(new League("Primera C Metropolitana", "Argentina", "http://www.betexplorer.com/soccer/argentina/primera-c-metropolitana/results"));
 

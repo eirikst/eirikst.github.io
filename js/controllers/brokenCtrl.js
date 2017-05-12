@@ -22,6 +22,16 @@ app.controller('brokenCtrl', ['$scope', 'testDataService', 'sortingService',
       $scope.showSpinner = false;
       sortingService.sortMatchesForTeams($scope.teams);//TODO: burde dette ligge her?
       localStorageService.storeTeams($scope.teams);
+
+      //feilhåndtering, sjekker feil rapportert i scraperen
+      var errs = betexScraper.getErrs();
+      if(errs.length > 0) {
+        var strng = "";
+        for(var i = 0; i < errs.length; i++) {
+          strng += errs[i] + "\n";
+        }
+        alert("Det skjedde en eller annen feil da gitt. Send Eirik en melding med feilen under.\n\nFeil:\n" + strng);
+      }
     });
   }
 

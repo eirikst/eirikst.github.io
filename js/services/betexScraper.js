@@ -9,6 +9,7 @@ app.service("betexScraper", ['leagueService', function(leagueService) {
 
   this.scrape = function(ctrl) {
     thiss.ctrl = ctrl;
+    thiss.err = [];
 
     thiss.allLeagues = leagueService.allLeagues();
 
@@ -39,7 +40,13 @@ app.service("betexScraper", ['leagueService', function(leagueService) {
             if(isTd) {
               var date = parseDate(td[5].innerHTML);
               if(date <= new Date()) {//match has been played
-                matchesFromLeague.push(createMatch(td));
+                var match = createMatch(td);
+                if(match != null) {
+                  matchesFromLeague.push(match);
+                }
+                else {
+                  //TODO: RAPPORTER FEIL
+                }
               }
             }
           }
@@ -49,8 +56,9 @@ app.service("betexScraper", ['leagueService', function(leagueService) {
         catch(e) {
           console.log("Failed getting league's matches: " + e);
           console.log(data);
+          registerError("Failed getting league's matches: " + e);
+          registerError(data);
         }
-
       };
 
       request = jQuery.ajax({
@@ -104,10 +112,10 @@ app.service("betexScraper", ['leagueService', function(leagueService) {
     }
    }
 
-  function createMatch(td) {
+  function createMatch(td) {//denne tar egentlig en tabell av td-er
     try {
-      var homeTeamStr = $(td[0]).find("span")[0].innerHTML;
-      var awayTeamStr = $(td[0]).find("span")[1].innerHTML;
+      var homeTeamStr = $(td[0]).find("span")[0].innerHTML.replace("<strong>", "").replace("</strong>", "");
+      var awayTeamStr = $(td[0]).find("span")[1].innerHTML.replace("<strong>", "").replace("</strong>", "");
       var scoreFull = $(td[1]).find("a")[0].innerHTML.split(":");
       var homeScore = scoreFull[0];
       var awayScore = scoreFull[1];
@@ -118,6 +126,8 @@ app.service("betexScraper", ['leagueService', function(leagueService) {
     catch(e) {
       console.log("Failed creating a match: " + e);
       console.log(td);
+      registerError("Failed creating a match: " + e);
+      registerError(td);
     }
   }
 
@@ -139,7 +149,14 @@ app.service("betexScraper", ['leagueService', function(leagueService) {
     });
   }
 
+  thiss.err = [];
+  function registerError(msg) {
+    thiss.err.push(msg);
+  }
 
+  this.getErrs = function() {
+    return this.err;
+  }
 
 
 
