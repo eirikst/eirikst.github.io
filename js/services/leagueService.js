@@ -31,7 +31,7 @@ app.service("leagueService", function() {
     urls.push(new League("Super League", "Albania", "http://www.betexplorer.com/soccer/albania/super-league/results"));
 
     //Argentina
-    urls.push(new League("Superliga", "Argentina", "http://www.betexplorer.com/soccer/argentina/superliga//results"));
+    urls.push(new League("Superliga", "Argentina", "http://www.betexplorer.com/soccer/argentina/superliga/results"));
     urls.push(new League("Primera B Nacional", "Argentina", "http://www.betexplorer.com/soccer/argentina/primera-b-nacional/results"));
     urls.push(new League("Primera B Metropolitana", "Argentina", "http://www.betexplorer.com/soccer/argentina/primera-b-metropolitana/results"));
     urls.push(new League("Primera C Metropolitana", "Argentina", "http://www.betexplorer.com/soccer/argentina/primera-c-metropolitana/results"));
@@ -53,7 +53,7 @@ app.service("leagueService", function() {
 
     //Bolivia
 
-    urls.push(new League("Division Professional", "Bolivia", "http://www.betexplorer.com/soccer/bolivia/division-profesional//results"));
+    urls.push(new League("Division Professional", "Bolivia", "http://www.betexplorer.com/soccer/bolivia/division-profesional/results"));
 
     //Bosnia
     urls.push(new League("Premier League", "Bosnia", "http://www.betexplorer.com/soccer/bosnia-and-herzegovina/premier-league/results"));
@@ -110,14 +110,14 @@ app.service("leagueService", function() {
     urls.push(new League("Vanarama National League South", "England", "http://www.betexplorer.com/soccer/england/vanarama-national-league-south/results"));
     urls.push(new League("Southern Premier League", "England", "http://www.betexplorer.com/soccer/england/southern-premier-league/results"));
     urls.push(new League("Northern Premier League", "England", "http://www.betexplorer.com/soccer/england/northern-premier-league/results"));
-    urls.push(new League("Bostik League", "England", "http://www.betexplorer.com/soccer/england/bostik-league//results"));
+    urls.push(new League("Bostik League", "England", "http://www.betexplorer.com/soccer/england/bostik-league/results"));
 
     //Estonia
     urls.push(new League("Meistrliiga", "Estonia", "http://www.betexplorer.com/soccer/estonia/meistriliiga/results"));
     urls.push(new League("Esiliiga", "Estonia", "http://www.betexplorer.com/soccer/estonia/esiliiga/results"));
 
     //Farao Islands
-    urls.push(new League("Premier League", "Farao Islands", "http://www.betexplorer.com/soccer/faroe-islands/premier-league//results"));
+    urls.push(new League("Premier League", "Farao Islands", "http://www.betexplorer.com/soccer/faroe-islands/premier-league/results"));
 
     //Finland
     urls.push(new League("Veikkausliiga", "Finland", "http://www.betexplorer.com/soccer/finland/veikkausliiga/results"));
@@ -168,9 +168,9 @@ app.service("leagueService", function() {
     //Italy
     urls.push(new League("Serie A", "Italy", "http://www.betexplorer.com/soccer/italy/serie-a/results"));
     urls.push(new League("Serie B", "Italy", "http://www.betexplorer.com/soccer/italy/serie-b/results"));
-    urls.push(new League("Serie C - Group A", "Italy", "http://www.betexplorer.com/soccer/italy/serie-c-group-a//results"));
-    urls.push(new League("Serie C - Group B", "Italy", "http://www.betexplorer.com/soccer/italy/serie-c-group-b//results"));
-    urls.push(new League("Serie C - Group C", "Italy", "http://www.betexplorer.com/soccer/italy/serie-c-group-c//results"));
+    urls.push(new League("Serie C - Group A", "Italy", "http://www.betexplorer.com/soccer/italy/serie-c-group-a/results"));
+    urls.push(new League("Serie C - Group B", "Italy", "http://www.betexplorer.com/soccer/italy/serie-c-group-b/results"));
+    urls.push(new League("Serie C - Group C", "Italy", "http://www.betexplorer.com/soccer/italy/serie-c-group-c/results"));
 
     //Japan
     urls.push(new League("J-League", "Japan", "http://www.betexplorer.com/soccer/japan/j-league/results"));
@@ -192,7 +192,7 @@ app.service("leagueService", function() {
     urls.push(new League("Premier League", "Malta", "http://www.betexplorer.com/soccer/malta/premier-league/results"));
 
     //Morocco
-    urls.push(new League("Botola Pro", "Morocco", "http://www.betexplorer.com/soccer/morocco/botola-pro//results"));
+    urls.push(new League("Botola Pro", "Morocco", "http://www.betexplorer.com/soccer/morocco/botola-pro/results"));
 
     //Mexico
     urls.push(new League("Primera Division", "Mexico", "http://www.betexplorer.com/soccer/mexico/primera-division/results"));
@@ -231,14 +231,14 @@ app.service("leagueService", function() {
     //Russia
     urls.push(new League("Premier League", "Russia", "http://www.betexplorer.com/soccer/russia/premier-league/results"));
     urls.push(new League("Division 1", "Russia", "http://www.betexplorer.com/soccer/russia/division-1/results"));
-    urls.push(new League("Division 2 - South", "Russia", "http://www.betexplorer.com/soccer/russia/division-2-south//results"));
-    urls.push(new League("Division 2 - East", "Russia", "http://www.betexplorer.com/soccer/russia/division-2-east//results"));
-    urls.push(new League("Division 2 - Center", "Russia", "http://www.betexplorer.com/soccer/russia/division-2-center//results"));
-    urls.push(new League("Division 2 - West", "Russia", "http://www.betexplorer.com/soccer/russia/division-2-west//results"));
-    urls.push(new League("Division 2 - Ural-Povolzhye", "Russia", "http://www.betexplorer.com/soccer/russia/division-2-ural-povolzhye//results"));
+    urls.push(new League("Division 2 - South", "Russia", "http://www.betexplorer.com/soccer/russia/division-2-south/results"));
+    urls.push(new League("Division 2 - East", "Russia", "http://www.betexplorer.com/soccer/russia/division-2-east/results"));
+    urls.push(new League("Division 2 - Center", "Russia", "http://www.betexplorer.com/soccer/russia/division-2-center/results"));
+    urls.push(new League("Division 2 - West", "Russia", "http://www.betexplorer.com/soccer/russia/division-2-west/results"));
+    urls.push(new League("Division 2 - Ural-Povolzhye", "Russia", "http://www.betexplorer.com/soccer/russia/division-2-ural-povolzhye/results"));
 
     //Saudi Arabia
-    urls.push(new League("Saudi Professional League", "Saudi Arabia", "http://www.betexplorer.com/soccer/saudi-arabia/saudi-professional-league//results"));
+    urls.push(new League("Saudi Professional League", "Saudi Arabia", "http://www.betexplorer.com/soccer/saudi-arabia/saudi-professional-league/results"));
 
 
     //Scotland
@@ -265,8 +265,8 @@ app.service("leagueService", function() {
     urls.push(new League("Premier League", "South Africa", "http://www.betexplorer.com/soccer/south-africa/premier-league/results"));
 
     //South-Korea
-    urls.push(new League("K-League 1", "South-Korea", "http://www.betexplorer.com/soccer/south-korea/k-league-1//results"));
-    urls.push(new League("K-League 2", "South-Korea", "http://www.betexplorer.com/soccer/south-korea/k-league-2//results"));
+    urls.push(new League("K-League 1", "South-Korea", "http://www.betexplorer.com/soccer/south-korea/k-league-1/results"));
+    urls.push(new League("K-League 2", "South-Korea", "http://www.betexplorer.com/soccer/south-korea/k-league-2/results"));
     urls.push(new League("National League", "South-Korea", "http://www.betexplorer.com/soccer/south-korea/national-league/results"));
 
     //Spain
@@ -288,18 +288,18 @@ app.service("leagueService", function() {
     urls.push(new League("Challenge League", "Switzerland", "http://www.betexplorer.com/soccer/switzerland/challenge-league/results"));
 
     //Thailand
-    urls.push(new League("Thai Premier League", "Thailand", "http://www.betexplorer.com/soccer/thailand/thai-premier-league//results"));
+    urls.push(new League("Thai Premier League", "Thailand", "http://www.betexplorer.com/soccer/thailand/thai-premier-league/results"));
 
     //Turkey
     urls.push(new League("Super Lig", "Turkey", "http://www.betexplorer.com/soccer/turkey/super-lig/results"));
     urls.push(new League("TFF 1. Lig", "Turkey", "http://www.betexplorer.com/soccer/turkey/tff-1-lig/results"));
 
     //Ukraine
-    urls.push(new League("Premier League", "Ukraine", "http://www.betexplorer.com/soccer/ukraine/premier-league//results"));
+    urls.push(new League("Premier League", "Ukraine", "http://www.betexplorer.com/soccer/ukraine/premier-league/results"));
 
     //USA
     urls.push(new League("MLS", "USA", "http://www.betexplorer.com/soccer/usa/mls/results"));
-    urls.push(new League("USL", "USA", "http://www.betexplorer.com/soccer/usa/usl//results"));
+    urls.push(new League("USL", "USA", "http://www.betexplorer.com/soccer/usa/usl/results"));
 
     //Wales
     urls.push(new League("Premier League", "Wales", "http://www.betexplorer.com/soccer/wales/premier-league/results"));
