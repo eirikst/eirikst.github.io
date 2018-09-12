@@ -21,8 +21,7 @@ app.service("leagueService", function() {
   }
 
   function initTest() {
-    urls.push(new League("Premier League", "England", "http://www.betexplorer.com/soccer/england/premier-league/results"));
-    urls.push(new League("Championship", "England", "http://www.betexplorer.com/soccer/england/championship/results"));
+    urls.push(new League("Serie A", "Italy", "http://www.betexplorer.com/soccer/italy/serie-a/results"));
   }
 
   function init() {

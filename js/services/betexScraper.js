@@ -133,9 +133,36 @@ app.service("betexScraper", ['leagueService', function(leagueService) {
 
 
   function parseDate(input) {
-    var parts = input.match(/(\d+)/g);
-    // note parts[1]-1
-    return new Date(parts[2], parts[1]-1, parts[0]);
+    try {
+      if(input == 'Today') {
+        return new Date();
+      }
+      if(input == 'Yesterday') {
+        var yesterday = new Date();
+        yesterday.setDate(yesterday - 1);
+        return yesterday;
+      }
+      if(input == 'Tomorrow') {
+        var tomorrow = new Date();
+        tomorrow.setDate(tomorrow + 1);
+        return tomorrow;
+      }
+      var parts = input.match(/(\d+)/g);
+
+      // note parts[1]-1
+      var date = new Date();
+      date.setDate(parts[0]);
+      date.setMonth(parts[1]-1);
+
+      if(parts.length != 2) {
+        date.setYear(parts[2]);
+      }
+
+      return date;
+    }
+    catch(e) {
+      throw "Datofeil i betexscraper parseDate: " + e;
+    }
   }
 
 
